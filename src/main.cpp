@@ -1,8 +1,24 @@
 #include <iostream>
+#include <vector>
 
 int main(){
   std::cout << "Task_2" << std::endl;
 
+  std::vector<int> vec = {7, 11, 2, 15};
+  const int res = 9;
+  int lt = 0;
+  int rt = vec.size() - 1;
+  while (lt != rt){       
+    int cursum = vec[lt] + vec[rt];
+    if (cursum < res)
+      lt++;
+    else if (cursum > res)
+      rt--;
+    else{
+      std::cout << "values: " << vec[lt] << " " << vec[rt] << std::endl;
+      break;
+    }
+  }
   return 0;
 }
 
